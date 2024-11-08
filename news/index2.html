@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <section class="heading px-3 py-2">
+        <div class="container-fluid">
+
+            <!-- links -->
+            <div class="row ">
+                <div class="col-6 ">
+                    <div class="content">
+                        <ul class="list-unstyled d-flex mb-0">
+                            <li><a href="">Home</a></li>
+                            <li><a href="">Photography</a></li>
+                            <li><a href="">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-6 d-sm-block  d-none">
+                    <div class="social-link">
+                        <ul class="list-unstyled d-flex justify-content-end mb-0">
+                            <li><a href=""><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href=""><i class="fa-brands fa-github"></i></a></li>
+                            <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                            <li><a href=""><i class="fa-brands fa-linkedin-in"></i></a></li>
+                            <li><a href=""><i class="fa-brands fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- logo -->
+    <section class="logo">
+        <div class="container-fluid">
+            <div class="row my-2 ">
+                <div class="col-md-4 col-xl-3 col-5 align-content-center mx-auto">
+                    <div class="logo">
+                        <img src="download.svg" alt="" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-md-8 col-lg-7  d-md-block d-none offset-lg-1  offset-xl-2">
+                    <div class="advertisment d-flex align-items-center p-2">
+                        <div
+                            class="adver-content border-2 border border-white z-2 px-2 w-100 d-flex justify-content-between align-items-center">
+                            <h3 class="text-white mb-0 fw-semibold fs-lg-3 fs-2">BUILD NEW SITE BY YOUR WAY</h3>
+                            <p class="mt-4 mb-0 text-white">ADVERTISEMENT</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="search">
+        <div class="container-fluid">
+            <div class="row bg-dark align-items-center">
+                <div class="col-7  d-md-block d-none">
+                    <div class="more-content py-3 px-1">
+                        <ul class="list-unstyled d-flex mb-0">
+                            <li><a href="">MEGA MENU<i class="fa-solid fa-chevron-down"></i></a></li>
+                            <li><a href="">POST FORMAT<i class="fa-solid fa-chevron-down"></i></a></li>
+                            <li><a href="">CATEGORIES<i class="fa-solid fa-chevron-down"></i></a></li>
+                            <li class="d-none d-lg-block"><a href="">PAGES<i class="fa-solid fa-chevron-down"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-5  float-end float-md-none">
+                    <div class="search-box float-end mt-md-2">
+                        <input type="text" placeholder="Search..." class="p-md-2 p-3 input-field" name="name">
+                        <button class="p-2"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="main">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-2 col-md-3 mt-2 mt-md-0">
+                    <div class="ad-1">
+                        <img src="diljit.jpg" alt="" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-8 mt-3 col-md-9">
+                    <div class="main-news">
+
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="ad-right-1">
+                        <iframe width="100%" height="500" src="https://www.youtube.com/embed/4BE8Z5D6oDg"
+                            title="The Weeknd Shot on iPhone 16 Pro" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+                            allow="autoplay; encrypted-media"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script>
+
+        const khabar = document.querySelector(".main-news");
+
+        const fetchingnews = async () => {
+
+            const data = await fetch("https://newsapi.org/v2/everything?q=india&from=2024-11-04&sortBy=publishedAt&apiKey=2ffeaac8603a4473b765c216c4dcb285");
+            const response = await data.json();
+            const oridata = response.articles;
+
+            for (let rate of oridata) {
+                const images = rate.urlToImage;
+                const title = rate.title;
+                const description = rate.description;
+                // const h4=document.querySelector(".content-news h4")
+                if (images) {
+                    const element = document.createElement("div");
+                    element.classList.add("content-news");
+                    element.innerHTML = `<div class="row">
+                    <div class="col-md-4 col-5">
+                     <img src="${images}" class="img-fluid">
+                     </div>
+                     <div class="col-md-8 ">
+                        <h4>${title}</h2>
+                        <p class="description-col">${description}</p>
+                    </div>
+                    </div>
+                    `
+                    khabar.append(element);
+
+                }
+            }
+        }
+        fetchingnews();
+
+
+
+        const btn = document.querySelector("button");
+        btn.addEventListener('click', () => {
+
+            const removeelement = document.querySelector(".main-news");
+            removeelement.innerHTML = "";
+
+            const fetchingnew = async () => {
+                const inputval = document.querySelector(".input-field");
+                const inputnum = inputval.value;
+
+
+                const data = await fetch(`https://newsapi.org/v2/everything?q=${inputnum}&from=2024-11-04&sortBy=publishedAt&apiKey=2ffeaac8603a4473b765c216c4dcb285`);
+                const response = await data.json();
+                const decide = response.totalResults;
+                console.log(decide)
+                if (decide > 0) {
+                    const oridata = response.articles;
+
+                    for (let rate of oridata) {
+                        const images = rate.urlToImage;
+                        const title = rate.title;
+                        const description = rate.description;
+                        if (images) {
+                            const element = document.createElement("div");
+                            element.classList.add("content-news");
+                            element.innerHTML = `<div class="row">
+<div class="col-4">
+<img src="${images}" class="img-fluid">
+</div>
+<div class="col-8">
+<h4>${title}</h2>
+<p class="description-col">${description}</p>
+</div>
+</div>
+`
+                            khabar.append(element);
+                            inputval.value = "";
+                        }
+                    }
+                }
+                else {
+                    const element = document.createElement("div");
+                    element.classList.add("not-present");
+                    element.innerHTML = "<p>No Data Present";
+                    khabar.append(element);
+                }
+
+
+            }
+            fetchingnew();
+
+
+
+
+        })
+
+    </script>
+</body>
+
+</html>
