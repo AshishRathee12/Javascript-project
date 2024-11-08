@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h2>REGISTRATION FORM</h2>
+    </div>
+    <form class="form" id="form">
+
+      <div class="form-control">
+        <label>username</label>
+        <input type="text" name="" id="username" placeholder="Enter your full name" autocomplete="off">
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error Message</small>
+      </div>
+      <div class="form-control">
+        <label>Email</label>
+        <input type="Email" name="" id="email" placeholder="Enter your Email" autocomplete="off">
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error Message</small>
+      </div>
+      <div class="form-control">
+        <label>Phone Number</label>
+        <input type="number" name="" id="phone" placeholder="Enter your Phone Number" autocomplete="off">
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error Message</small>
+      </div>
+      <div class="form-control">
+        <label>Password</label>
+        <input type="password" name="" id="password" placeholder="Enter your password" autocomplete="off">
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error Message</small>
+      </div>
+      <div class="form-control">
+        <label>confirm password</label>
+        <input type="password" name="" id="cpassword" placeholder="Enter your Password again" autocomplete="off">
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error Message</small>
+      </div>
+      <input type="submit" value="submit" class="btn" name="">
+    </form>
+  </div>
+</body>
+<script>
+  const form = document.getElementById("form");
+  const username = document.getElementById("username");
+  const email = document.getElementById("email");
+  const phone = document.getElementById("phone");
+  const password = document.getElementById("password");
+  const cpassword = document.getElementById("cpassword");
+  const body = document.querySelector("body");
+
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    validate();
+  });
+
+
+
+
+  // more email validate==
+  const isEmail = (emailval) => {
+    var atsymbol = emailval.indexOf("@");
+    if (atsymbol < 1) return false;
+    var dot = emailval.lastIndexOf("."); 4
+    if (dot <= atsymbol + 5) return false;
+    if (dot === emailval.length - 1) return false;
+    return true;
+  }
+
+  // define the validate function
+  function validate() {
+    const usernameval = username.value.trim();
+    const emailval = email.value.trim();
+    const phoneval = phone.value.trim();
+    const passwordval = password.value.trim();
+    const cpasswordval = cpassword.value.trim();
+
+
+    // validate username=
+    if (usernameval === "") {
+      seterrormsg(username, "username cannot be empty")
+    } else if (usernameval.length <= 3) {
+      seterrormsg(username, "username min 3 char")
+    } else {
+      setsuccessmsg(username);
+    }
+
+    // validate your email id=
+    if (emailval === '') {
+      seterrormsg(email, "email cannot be empty")
+    } else if (!isEmail(emailval)) {
+      seterrormsg(email, "not a valid emial")
+    } else {
+      setsuccessmsg(email);
+    }
+
+    // validate phone==
+    if (phoneval === '') {
+      seterrormsg(phone, "phone cannot be empty")
+    } else if (phoneval.length !== 10) {
+      seterrormsg(phone, "phone number must be 10 digit")
+    } else {
+      setsuccessmsg(phone);
+    }
+
+    // validate password=
+    if (passwordval === '') {
+      seterrormsg(password, "password cannot be empty")
+    } else if (passwordval.length <= 6) {
+      seterrormsg(password, "password must greater than six digit")
+    } else {
+      setsuccessmsg(password);
+    }
+
+    // validate cpassword=
+    if (cpasswordval === '') {
+      seterrormsg(cpassword, "confirmed password cannot be empty")
+    } else if (cpasswordval !== passwordval) {
+      seterrormsg(cpassword, "password must be same")
+    }
+    else {
+      setsuccessmsg(cpassword);
+    }
+
+
+    // successmsg();
+
+
+
+  }
+  function seterrormsg(input, errormsg) {
+    const formcontrol = input.parentElement;
+    const small = formcontrol.querySelector("small");
+    // aur yaha pe bi main class liko phir another add kro
+    formcontrol.className = "form-control error";
+    small.innerText = errormsg;
+
+  }
+  function setsuccessmsg(tags) {
+    const success1 = tags.parentElement;
+    success1.className = "form-control success";
+  }
+
+
+</script>
+
+</html>
