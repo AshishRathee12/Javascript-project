@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      overscroll-behavior: none;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    #navbar {
+      position: sticky;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      background-color: rgb(233, 156, 12);
+      justify-content: space-between;
+      height: 75px;
+    }
+
+    #navbar a {
+      color: #e2e2e2;
+      text-decoration: none;
+      font-size: 32px;
+      padding: 18px;
+      font-weight: 700;
+    }
+
+    #navbar div {
+      display: flex;
+      background-color: #e2e2e2;
+      height: 35px;
+      align-items: center;
+      margin-right: 18px;
+      border-radius: 3px;
+    }
+
+    #navbar i {
+      margin-right: 10px;
+      font-size: 20px;
+      padding: 8px 5px;
+      color: rgb(233, 156, 12);
+    }
+
+    #navbar p {
+      font-size: 20px;
+      background-color: rgb(233, 156, 12);
+      padding: 1px 8px;
+      margin-right: 4px;
+      border-radius: 50%;
+      color: #e2e2e2;
+      width: 100%;
+    }
+
+    /* container====== */
+    #main {
+      display: flex;
+    }
+
+    #main .container {
+      margin: 20px 10px 20px 20px;
+      display: flex;
+      gap: 20px 0px;
+      width: 65%;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+
+    }
+
+
+    #main .container .pro {
+      min-width: 230px;
+      max-width: 200px;
+
+      width: 25%;
+      padding: 14px;
+      border-radius: 5px;
+      border: 1px solid rgba(215, 145, 15, 0.69);
+    }
+
+    #main .container .pro img {
+      max-width: 200px;
+      max-height: 251px;
+      min-height: 251px;
+      object-fit: cover;
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .container .pro .info p {
+      font-size: 18px;
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    .container .pro .info p strong {
+      color: red;
+    }
+
+    .container .pro .button {
+      margin-top: 5px;
+      width: 100%;
+    }
+
+    .container .pro .button .btn {
+      width: 100%;
+      background-color: rgb(233, 156, 12);
+      color: #ffffffd7;
+      font-size: 20px;
+      border: none;
+      padding: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .container .pro .button .btn:hover {
+      color: #fff;
+    }
+
+    /* cart==== */
+    .cart {
+      background-color: rgba(128, 128, 128, 0.423);
+      width: 29%;
+      margin: 20px 20px;
+      padding: 17px;
+    }
+
+    .cart .cart-nav {
+      width: 100%;
+      background-color: rgb(233, 156, 12);
+      color: #ffffffd7;
+      font-size: 20px;
+      border: none;
+      padding: 6px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    .cart .cart-nav a {
+      color: #e2e2e2;
+      text-decoration: none;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    /* cart items */
+
+    .items {
+      width: 96%;
+      margin-left: 5px;
+    }
+
+    .items .added {
+      height: 8vh;
+      display: flex;
+      background-color: #fff;
+      margin-top: 10px;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      border-radius: 3px;
+
+    }
+
+    .items .added img {
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+
+    .items .added strong {
+      color: red;
+    }
+
+    .items .added button {
+      background-color: transparent;
+      color: rgb(233, 156, 12);
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .total p {
+      color: red;
+      font-weight: 700;
+      font-size: 20px;
+      margin-right: 18px;
+
+    }
+
+    .total {
+      margin-top: 15px;
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+
+<body>
+  <section id="navbar">
+    <a href="#">LOGO</a>
+    <div>
+      <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+      <p></p>
+    </div>
+  </section>
+
+  <section id="main">
+    <div class="container">
+      <div class="pro">
+        <img src="p3.avif" alt="">
+        <div class="info">
+          <p>White T-shirt</p>
+          <p><strong> 120.00</strong></p>
+        </div>
+        <div class="button">
+          <button class="btn">Add to Cart</button>
+        </div>
+      </div>
+      <div class="pro">
+        <img src="p4.avif" alt="">
+        <div class="info">
+          <p>Check Shirt</p>
+          <p><strong> 90.00</strong></p>
+        </div>
+        <div class="button">
+          <button class="btn">Add to Cart</button>
+        </div>
+      </div>
+      <div class="pro">
+        <img src="n2.jpg" alt="">
+        <div class="info">
+          <p>Hoodies</p>
+          <p><strong> 150.00</strong></p>
+        </div>
+        <div class="button">
+          <button class="btn">Add to Cart</button>
+        </div>
+      </div>
+      <div class="pro">
+        <img src="n3.jpeg" alt="">
+        <div class="info">
+          <p>straight Pents</p>
+          <p><strong> 50.00</strong></p>
+        </div>
+        <div class="button">
+          <button class="btn">Add to Cart</button>
+        </div>
+      </div>
+      <div class="pro">
+        <img src="n4.jpg" alt="">
+        <div class="info">
+          <p>Shoes</p>
+          <p><strong> 200.00</strong></p>
+        </div>
+        <div class="button">
+          <button class="btn">Add to Cart</button>
+        </div>
+      </div>
+      <div class="pro">
+        <img src="n6.jpg" alt="">
+        <div class="info">
+          <p>Perfume</p>
+          <p><strong>120.00</strong></p>
+        </div>
+        <div class="button">
+          <button class="btn">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="cart">
+      <div class="cart-nav">
+        <a href="#">My Cart</a>
+      </div>
+      <div class="items">
+
+      </div>
+      <div class="total">
+        <p>Total:</p>
+        <p>0</p>
+      </div>
+    </div>
+  </section>
+
+
+  <script>
+
+    let cartbtn = document.querySelectorAll("button");
+    let cartitem = document.querySelector(".items");
+
+    let num = 0;
+    let numdetail = document.querySelector("#navbar p")
+    numdetail.innerText = num;
+
+
+    // accessing element of cart ===
+    cartbtn.forEach(element => {
+      element.addEventListener('click', (e) => {
+        let tarelement = e.target.parentElement.parentElement;
+        let eleimage = tarelement.querySelector("img").src;
+
+        let elename = tarelement.querySelector(".info p").innerText;
+        let elename2 = tarelement.querySelector(".info strong").innerText;
+
+        increase();
+
+        addingelement(eleimage, elename, elename2);
+        total(elename2);
+      })
+    });
+
+
+    // number of items in cart =====
+    const increase = () => {
+      num++;
+      numdetail.innerText = num;
+    }
+
+    const decrease = () => {
+      num--;
+      numdetail.innerText = num;
+    }
+
+    // creating element of items =======
+    const addingelement = (eleimage, elename, elename2) => {
+      const newelement = document.createElement('div');
+      newelement.classList.add("added");
+      newelement.innerHTML = `<img src="${eleimage}">
+            <p>${elename}</p>
+            <p><strong>${elename2}</strong></p>
+            <button><i class="fa-solid fa-trash-can"></i></button>`;
+
+      cartitem.appendChild(newelement);
+
+
+      // removing element ======
+      newelement.querySelector("button").addEventListener('click', (e) => {
+        const removed = e.target.parentElement.parentElement;
+        removed.remove();
+        decrease();
+        deducted(elename2);
+      });
+    }
+
+    // total price ====
+    const total = (price) => {
+      let price1 = parseInt(price);
+      let pricetag = document.querySelectorAll(".total p")[1];
+      let pricetagnum = pricetag.innerText;
+      let numpricetag = parseInt(pricetagnum)
+      pricetagnum = numpricetag + price1;
+      pricetag.innerText = pricetagnum
+
+    }
+
+
+    // decrease price ===
+    const deducted = (price) => {
+      let price1 = parseInt(price);
+      let pricetag = document.querySelectorAll(".total p")[1];
+      let pricetagnum = pricetag.innerText;
+      let numpricetag = parseInt(pricetagnum)
+      pricetagnum = numpricetag - price1;
+      pricetag.innerText = pricetagnum
+
+    }
+
+
+
+
+
+
+  </script>
+
+
+
+</body>
+
+</html>
