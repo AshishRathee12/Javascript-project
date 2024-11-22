@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="heading">
+        <h1>CURD Operations</h1>
+      </div>
+      <div class="add-element">
+        <div class="name">
+          <input type="text" id="name" name="name" placeholder="Enter name" />
+        </div>
+        <div class="emial">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter E-mail"
+          />
+        </div>
+        <div class="add-btn">
+          <button id="btn">Add</button>
+        </div>
+      </div>
+      <div class="content">
+        <div class="title">
+          <table>
+            <thead>
+            <tr class="head">
+              <th width="10%">ID</th>
+              <th width="20%">Name</th>
+              <th width="40%">Email</th>
+              <th width="30%">Action</th>
+            </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="update-element">
+        <div class="name">
+          <input type="text" id="new-name" name="new-name" />
+        </div>
+        <div class="email">
+          <input type="email" id="new-email" name="new-email"  />
+        </div>
+        <div class="Update-btn">
+          <button class="btn-1">Update</button>
+          <button class="btn-2">cancel</button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
